@@ -1,5 +1,7 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Buttons from "./buttons";
+import Cards from "./cards";
 
 export default function Home() {
   return (
@@ -11,18 +13,117 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <div className={styles.containerMain}>
+          {/* 
+          Buttons Component
+          */}
+          <div className={styles.buttonsContainer}>
+            <Buttons simple={true}></Buttons>
+            <Buttons left={true}></Buttons>
+            <Buttons right={true}></Buttons>
+          </div>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/*.js</code>
-        </p>
+          {/* 
+          Horizontal Layout Cards Grid Component
+          */}
+          <div className={styles.cardsContainer}>
+            <div className={styles.grid3}>
+              <Cards
+                name="Jane Cooper"
+                designation="Central Paradigm Technician"
+                image="assets/girl1.jpg"
+                horizontalCard={true}
+              ></Cards>
+              <Cards
+                name="Cody Fisher"
+                designation="Product Directives Officer"
+                image="assets/boy1.jpg"
+                horizontalCard={true}
+              ></Cards>
+              <Cards
+                name="Esther Howard"
+                designation="Forward Response Developer"
+                image="assets/girl2.jpg"
+                horizontalCard={true}
+              ></Cards>
+              <Cards
+                name="Jenny Wilson"
+                designation="Central Security manager"
+                image="assets/girl3.jpg"
+                horizontalCard={true}
+              ></Cards>
+              <Cards
+                name="Kriston Watson"
+                designation="Lead Implementaion Laison"
+                image="assets/girl4.jpg"
+                horizontalCard={true}
+              ></Cards>
+              <Cards
+                name="Cameron Williamson"
+                designation="Internal Applications Engineer"
+                image="assets/boy2.jpg"
+                horizontalCard={true}
+              ></Cards>
+            </div>
+          </div>
 
-        <div className={styles.grid}>
+          {/* 
+          Vertical Layout Cards Grid Component
+          */}
+          <div className={styles.cardsContainer}>
+            <div className={styles.grid4}>
+              <Cards
+                name="Jane Cooper"
+                designation="Paradigm Representative"
+                image="assets/girl1.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Cody Fisher"
+                designation="Lead Security Associate"
+                image="assets/boy1.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Esther Howard"
+                designation="Assurance Administrator"
+                image="assets/girl2.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Jenny Wilson"
+                designation="Cheif Accountablity Analyst"
+                image="assets/girl3.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Kriston Watson"
+                designation="Investor Data Orchestrator"
+                image="assets/girl4.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Cameron Williamson"
+                designation="Product Infrastructure Executive"
+                image="assets/boy2.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Courtney Henry"
+                designation="Investor Factors Associate"
+                image="assets/girl5.jpg"
+                verticalCard={true}
+              ></Cards>
+              <Cards
+                name="Theresa Webb"
+                designation="Global Division Officer"
+                image="assets/girl6.jpg"
+                verticalCard={true}
+              ></Cards>
+            </div>
+          </div>
         </div>
       </main>
     </div>
-  )
+  );
 }

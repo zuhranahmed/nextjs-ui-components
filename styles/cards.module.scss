@@ -1,3 +1,105 @@
-.card {
+%flex-center {
+  display: flex;
+  align-items: center;
+}
 
+// Card Mixin Function
+
+@mixin card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px rgba(#161d2e, 0.15);
+
+  //   Reseting the User Agent Stylesheet CSS for p Tag
+  p {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+  }
+  p.name {
+    color: #161d2e;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  p.designation {
+    color: #6c7280;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  p.role {
+    color: #03505c;
+    background-color: #d5f5f6;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 6.5px 12.5px;
+    border-radius: 15px;
+    font-weight: 500;
+    display: inline-block;
+  }
+  div.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #e5e7eb;
+    .button {
+      @extend %flex-center;
+      padding: 15px 0;
+      font-weight: 500;
+      color: #374151;
+      font-size: 16px;
+      line-height: 1;
+      justify-content: center;
+      gap: 10px;
+      &:nth-child(1) {
+        border-right: 1px solid #e5e7eb;
+      }
+    }
+  }
+}
+
+// Vertical Card
+.verticalCard {
+  @include card;
+  .userDetails {
+    @extend %flex-center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 35px 0;
+    p.name {
+      margin-bottom: 5px;
+    }
+    p.designation {
+      margin-bottom: 15px;
+    }
+    .image {
+      width: 125px;
+      height: 125px;
+      margin-bottom: 25px;
+      display: block;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Horizontal Card
+.horizontalCard {
+  @include card;
+  .userDetails {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    div div {
+      @extend %flex-center;
+      gap: 15px;
+    }
+
+    .image {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 25px;
+      display: block;
+      border-radius: 50%;
+    }
+  }
 }
